@@ -1,0 +1,99 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+html,body{
+background-image: url('https://storage.kun.uz/source/3/tvuGyFiGU0LK4Tw2MHv6aQLecJkFcA24.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 110%;
+font-family: 'Numans', sans-serif;
+width:100%;
+}
+
+.card{
+height: 700px;
+margin-top: 5%;
+margin-bottom: auto;
+width: 550px;
+padding-left: 0.5%;
+margin-left: 0.5%;
+background-color: rgba(0,0,0,0.5) !important;
+}
+label{
+  color: white;
+}
+ .alert-info{
+  height:50px;
+  
+  }
+    p{
+  margin-left: 35%;
+  font-family:cursive;
+
+  }
+
+.card-header h3{
+color: white;
+font-size:20px;
+}
+#f1{
+margin-left:0.5px;
+padding-left:0.5px;
+margin-right:50%;
+}
+
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+.form-inline label {
+    justify-content: normal !important;
+}
+.col-md-12 {
+    margin-bottom: 10px !important;
+}
+.row {
+    margin-bottom: 10px !important;
+}
+
+#id1{
+margin-right:30px;
+
+}
+#foot{
+height:50%;
+}
+
+#btn{
+margin-top:50%;
+}
+.modal-header,modal-footer{
+background-color:#F0EFEE;
+}
+.label{
+    background-color:white;
+}
+.btn-warning{
+    width:20%
+}

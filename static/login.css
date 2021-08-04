@@ -1,0 +1,94 @@
+
+.main-container{
+    margin: 0;
+    padding-top: 190px;
+    padding-left:35%;
+    height: 100%;
+   
+  
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .user-card {
+    height: 430px;
+    width: 480px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-image: url('http://www.hrinasia.com/wp-content/uploads/2016/03/Digitalisation-changing-the-world-of-work.jpg');
+    background: #f6f4ff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+  
+  }
+  .brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 70%;
+  
+    background: #F4F6F6   ;
+    padding: 10px;
+    text-align: center;
+  
+  }
+  .brand_logo {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    border: 2px solid white;
+  
+  }
+  
+  .btn-primary {
+    width: 100%;
+    margin-left: 1%;
+    font-size: 130%;
+  
+    color: #fbf6ff !important;
+  }
+  .btn-primary :focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  
+  }
+  .login-container {
+    padding: 0 2rem;
+    width:107%;
+    margin-top:7%;
+  }
+  .input-group-text {
+    background: #fbf6ff !important;
+    color: rgb(66, 95, 226)   !important;
+    border: 0 !important;
+    font-size:120%;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+  }
+  .input_user,
+  .input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }
+  .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color:rgb(66, 95, 226)  !important;
+  }
+  .card-body{
+      padding-top:25%;
+      
+  }
+  .custom-checkbox{
+      margin-top:7%;
+      margin-left:10%;
+  }
+  .btn-primary{
+    font-size:20px;
+    text-transform: uppercase;
+  
+  }

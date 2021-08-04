@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+ <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Survey</title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1">	
+           <link rel="stylesheet" type="text/css"  href="../static/styles.css" />
+
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    
+
+</head>
+
+
+<body>
+<script type="text/javascript">
+function valide(){
+var a = document.forms["myform"]["a"].value;
+var b = document.forms["myform"]["b"].value;
+var c = document.forms["myform"]["c"].value;
+var d = document.forms["myform"]["d"].value;
+var e = document.forms["myform"]["e"].value;
+var f = document.forms["myform"]["f"].value;
+var g = document.forms["myform"]["g"].value;
+var h = document.forms["myform"]["h"].value;
+var i = document.forms["myform"]["i"].value;
+if (!(a>0 && a<6)){
+    alert("Departure/arrival time must be between 0 and 5");
+    return false;
+}
+if (!(b>0 && b<6)){
+    alert(" Wifi-service must be between 0 and 5");
+    return false;
+}
+if (!(c>0 && c<6)){
+    alert(" Online booking must be between 0 and 5");
+    return false;
+}
+if (!(d>0 && d<6)){
+    alert(" Inflight entertainment must be between 0 and 5");
+    return false;
+}
+if (!(e>0 && e<6)){
+    alert(" Inflight  service must be between 0 and 5");
+    return false;
+}
+if (!(f>0 && f<6)){
+    alert(" Gate location must be between 0 and 5");
+    return false;
+}
+if (!(g>0 && g<6)){
+    alert(" Food and drink must be between 0 and 5");
+    return false;
+}
+if (!(h>0 && h<6)){
+    alert(" Seat confort must be between 0 and 5");
+    return false;
+}
+if (!(i>0 && i<6)){
+    alert(" Baggage handling must be between 0 and 5");
+    return false;
+}
+}
+</script>
+<div class="main-container" >
+	<div class="d-flex justify-content-center h-100" id="f1">
+		<div class="card" >
+			<div class="card-header">
+				<h3>Passenger satisfaction survey</h3>	
+            
+			</div>
+            {% with messages = get_flashed_messages() %}
+                         {% if messages %}
+                             {% for msg in messages %}
+                             <div class="alert alert-info" role="alert">
+                                 <p>{{msg}}</<p>
+                                 </div>
+                             {% endfor%}
+                         {% endif %}
+                    {% endwith%}
+			<div class="card-body">
+				<form method="POST" action='/client' onsubmit="return valide()" name="myform">
+		                <div class="form-group">
+                         <label for="travel">Choose a travel type:</label>
+
+                        <select name="travel" id="travel" class="form-control"required>
+						      <option value="">Travel type</option>
+                              <option value="personnal">Personnal travel</option>
+                              <option value="business">Business travel</option>
+                        </select>	
+                         </div>
+		                
+						  <div class="form-group row" >
+                           
+                            
+                            <div class="col-md-6 form-inline">
+                             <label for="class">Choose a class:</label>
+
+                           <select name="classe" id="classe" class="form-control col-md-12" required>
+                                <option value="">Class</option>
+                                <option value="eco">Eco</option>
+                                <option value="eco plus">Eco plus</option>
+								<option value="business">Business</option>
+                            </select>	
+                            </div>
+                            <div class="col-md-6 form-inline">
+                             <label for="sexe">Choose a gender:</label>
+
+							 <select name="sexe" id="sexe" class="form-control col-md-12" required>
+                                <option value="">Gender</option>
+                                <option value="H">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                        <div class="col-md-6 form-inline">
+                                <input type="number" class="form-control col-md-12" id="age" name="age"  placeholder="Age" required> 
+                            </div>	
+                         <div class="col-md-6 form-inline">
+                            <input type="number" class="form-control col-md-12" name="a" placeholder="Departure/arrival time (0 to 5)">
+                         </div>
+                         </div>
+		                 <div class="form-group row" >
+                            <div class="col-md-6 form-inline">
+                                <input type="number" class="form-control col-md-12"  name="b"  placeholder="Wi-Fi service (0 to 5)"  required>
+                            </div>
+                            <div class="col-md-6 form-inline">
+                                <input  type="number" class="form-control col-md-12"  name="c" placeholder="Online booking (0 to 5)"  required>
+                            </div>
+                        </div>
+						  <div class="form-group row" >
+                            <div class="col-md-6 form-inline">
+                                <input type="number" class="form-control col-md-12"  name="d"  placeholder="Inflight entertainment (0 to 5)" >
+                            </div>
+                            <div class="col-md-6 form-inline">
+                                <input  type="number" class="form-control col-md-12" name="e" placeholder="Inflight  service (0 to 5)"  required>
+                            </div>
+                        </div>
+						  <div class="form-group row" >
+                            <div class="col-md-6 form-inline">
+                                <input type="number" class="form-control col-md-12"  name="f"  placeholder="Gate location (0 to 5)"  required>
+                            </div>
+                            <div class="col-md-6 form-inline">
+                                <input  type="number" class="form-control col-md-12"  name="g" placeholder="Food and drink(0 to 5)"  required>
+                            </div>
+                        </div>
+						  <div class="form-group row" >
+                            <div class="col-md-6 form-inline">
+                                <input type="number" class="form-control col-md-12"  name="h"  placeholder="Seat confort (0to 5)"  required>
+                            </div>
+                            <div class="col-md-6 form-inline">
+  
+                                <input  type="number" class="form-control col-md-12" id="bag" name="i" placeholder="Baggage handling(0 to 5)"  required>
+                            </div>
+                        </div>
+						 <div class="form-group row" >
+                            <div class=" col-md-12 form-inline">
+                                <textarea type="text" class="form-control col-md-12" name="comm" id="comm" placeholder="Write a comment" rows="2" required></textarea>
+                              </div> 
+                        </div>
+                            <div class="form-group">
+				 						<input type="submit" value="Submit"  class="btn float-right btn-warning" data-toggle="modal" data-target="#myModal">
+
+
+				             </div>
+						
+				</form>
+			</div>
+		
+		</div>
+	
+
+  </div>
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+{% extends 'footer.html' %}
+</body>
+
+</html>

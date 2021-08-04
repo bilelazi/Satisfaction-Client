@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Login Page</title>
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+.main-container{
+    margin: 0;
+    padding-top: 7%;
+    padding-left:33%;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+
+   
+  
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .user-card {
+    height: 440px;
+    width: 480px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-image: url('http://www.hrinasia.com/wp-content/uploads/2016/03/Digitalisation-changing-the-world-of-work.jpg');
+    background: #f6f4ff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+  
+  }
+  .brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 70%;
+  
+    background: #F4F6F6   ;
+    padding: 10px;
+    text-align: center;
+  
+  }
+  .brand_logo {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    border: 2px solid white;
+  
+  }
+ 
+  
+  .btn-primary {
+    width: 100%;
+    margin-left: 1%;
+    font-size: 130%;
+  
+    color: #fbf6ff !important;
+  }
+  .btn-primary :focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  
+  }
+  .login-container {
+    padding: 0 2rem;
+    width:107%;
+    margin-top:7%;
+  }
+  .input-group-text {
+    background: #fbf6ff !important;
+    color: rgb(66, 95, 226)   !important;
+    border: 0 !important;
+    font-size:120%;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+  }
+  .input_user,
+  .input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }
+  .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color:rgb(66, 95, 226)  !important;
+  }
+  .card-body{
+      padding-top:25%;
+      
+  }
+  .custom-checkbox{
+      margin-top:7%;
+      margin-left:10%;
+  }
+  .btn{
+    font-size:20px;
+    text-transform: uppercase;
+    background-color:#3E5BC1;
+    color: white;
+  
+  }
+  a{
+  color:black;
+  }
+  .alert-danger{
+  height:50px;
+  width:90%;
+  margin-top:3%;
+  margin-left:8%;
+  }
+   p{
+  margin-left: 12%;
+
+  }
+</style>
+    
+<body>
+	   <div class=" jumbotron">
+	   
+	    <div class="main-container">
+    <div class="user-card">    
+                  <div class="d-flex justify-content-center">
+                      <div class="brand_logo_container">
+                        <img src="data:image/png;base64,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" class="brand_logo" alt="Logo">
+                      </div>
+                    </div>
+                    
+                   
+      
+      <div class="card-body">
+            <form name="form" method="POST" action='/login' >
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user fa-2x" aria-hidden="true"></i>
+              </span>
+            </div>
+            <input type="text" name="username"  id="user" class="form-control py-4" placeholder="Username" required >
+          
+
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+              </span>
+            </div>
+            <input type="password" name="password" id="pwd"  class="form-control py-4" placeholder="Password" required>
+          </div>
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customControlInline">
+              <label class="custom-control-label" for="customControlInline">Remember me</label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center  login-container">
+           
+         
+           
+            <button type="submit"class="btn"name="button" style="height:10%;
+            width:100%; 
+            ">Login</button>
+        </div>
+        
+        
+         {% with messages = get_flashed_messages() %}
+                         {% if messages %}
+                             {% for msg in messages %}
+                             <div class="alert alert-danger" role="alert">
+                                 <p>{{msg}}</<p>
+                                 </div>
+                             {% endfor%}
+                         {% endif %}
+                    {% endwith%}
+        
+        </form>
+      </div>
+    </div>
+</div>
+  </div>
+  
+  </body>
+  </html>
